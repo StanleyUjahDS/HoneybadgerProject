@@ -4,7 +4,7 @@
   "description": "",
   "keywords": [],
   "main": "src/index.tsx",
-  "homepage": "https://StanleyUjahDS.github.io/hbadg",
+ "homepage": "https://StanleyUjahDS.github.io/Honeybadger",
   "dependencies": {
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.5.0",

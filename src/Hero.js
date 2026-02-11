@@ -7,16 +7,19 @@ export default function Hero() {
         <h1>Fearless By Nature</h1>
         <h1>Unstoppable Onchain</h1>
         <h3>
-       Built for resilience, governed by conviction, and designed to thrive across every market cycle.
+          Built for resilience, governed by conviction, and designed to thrive across every market cycle.
         </h3>
         <div className="hero_button">
-          <button >Learn More</button>
-          <button >Read ☰</button>
+          <button>Learn More</button>
+          <button>Read ☰</button>
         </div>
       </div>
 
       <div className="hero-image blob">
-        <img src="/images/NewHbadger.png" alt="Honey Badger" />
+        <img
+          src={`${process.env.PUBLIC_URL}/images/NewHbadger.png`}
+          alt="Honey Badger"
+        />
       </div>
     </div>
   );

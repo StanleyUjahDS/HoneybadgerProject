@@ -16,7 +16,6 @@ export default function Nav() {
     setOpen(false); // 👈 CLOSE SIDEBAR AFTER CLICK
   };
 
-
   return (
     <>
       {/* TOP NAV */}
@@ -26,12 +25,12 @@ export default function Nav() {
         </button>
 
         <div className="brand">
-          <img src="/images/MainLogo.PNG" alt="logo" />
+          <img src={`${process.env.PUBLIC_URL}/images/MainLogo.PNG`} alt="logo" />
           <h3>HBadger</h3>
         </div>
 
         <ul className="nav-links">
-           <li>
+          <li>
             <a href="#InfoSections">About</a>
           </li>
           <li>
@@ -51,29 +50,28 @@ export default function Nav() {
         </ul>
       </div>
 
-     {/* SIDEBAR */}
-<div className={`sidebar ${open ? "open" : ""}`}>
-  <button className="closebtn" onClick={() => setOpen(false)}>
-    ×
-  </button>
+      {/* SIDEBAR */}
+      <div className={`sidebar ${open ? "open" : ""}`}>
+        <button className="closebtn" onClick={() => setOpen(false)}>
+          ×
+        </button>
 
-  <a href="#InfoSections" onClick={() => setOpen(false)}>
-    About
-  </a>
-  <a href="#TokenomicsSection" onClick={() => setOpen(false)}>
-    Tokenomics
-  </a>
-  <a href="#RoadmapSection" onClick={() => setOpen(false)}>
-    Roadmap
-  </a>
-  <a href="#CommunitySection" onClick={() => setOpen(false)}>
-    Community
-  </a>
-  <a href="#" onClick={() => setOpen(false)}>
-    Buy
-  </a>
-</div>
-
+        <a href="#InfoSections" onClick={() => setOpen(false)}>
+          About
+        </a>
+        <a href="#TokenomicsSection" onClick={() => setOpen(false)}>
+          Tokenomics
+        </a>
+        <a href="#RoadmapSection" onClick={() => setOpen(false)}>
+          Roadmap
+        </a>
+        <a href="#CommunitySection" onClick={() => setOpen(false)}>
+          Community
+        </a>
+        <a href="#" onClick={() => setOpen(false)}>
+          Buy
+        </a>
+      </div>
     </>
   );
 }

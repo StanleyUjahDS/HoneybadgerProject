@@ -87,47 +87,39 @@ export default function Hero() {
           }
         />
 
-        {/* Markers on the vertical line */}
-       {/* Milestone Images */}
-      
-<div className="Milestone-Container">
-   <img
-  src="/images/BEgining.png"  // replace with your actual path
-  alt="Phase I milestone"
-  className="Milestone-marker"
-  style={{ top: "5%" }}
-/>
-<img
-  src="/images/Digging.png"
-  alt="Phase II milestone"
-  className="Milestone-marker"
-  style={{ top: "25%" }}
-/>
-
-<img
-  src="/images/Trap.png"
-  alt="Phase III milestone"
-  className="Milestone-marker"
-  style={{ top: "45%" }}
-/>
-
-<img
-  src="/images/HoneyBadgerBag.png"
-  alt="Phase IV milestone"
-  className="Milestone-marker"
-  style={{ top: "65%" }}
-/>
-<img
-  src="/images/logoHoneyBadger.png"
-  alt="Phase V milestone"
-  className="Milestone-marker"
-  style={{ top: "85%" }}
-/>
-
-</div>
-       
-        
-
+        {/* Milestone Images */}
+        <div className="Milestone-Container">
+          <img
+            src={`${process.env.PUBLIC_URL}/images/BEgining.png`}
+            alt="Phase I milestone"
+            className="Milestone-marker"
+            style={{ top: "5%" }}
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/Digging.png`}
+            alt="Phase II milestone"
+            className="Milestone-marker"
+            style={{ top: "25%" }}
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/Trap.png`}
+            alt="Phase III milestone"
+            className="Milestone-marker"
+            style={{ top: "45%" }}
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/HoneyBadgerBag.png`}
+            alt="Phase IV milestone"
+            className="Milestone-marker"
+            style={{ top: "65%" }}
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/logoHoneyBadger.png`}
+            alt="Phase V milestone"
+            className="Milestone-marker"
+            style={{ top: "85%" }}
+          />
+        </div>
       </div>
     </div>
   );

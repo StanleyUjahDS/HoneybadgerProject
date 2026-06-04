@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./styles/tokenomics.css";
 import CardThree from "./CardType3";
 import TokenAllocation from "./Distribution";
 import Tokenomics3D from "./TokenomicsChart";

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./styles.css";
+import "./styles/navbar.css";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -13,7 +13,7 @@ export default function Nav() {
       block: "start",
     });
 
-    setOpen(false); // 👈 CLOSE SIDEBAR AFTER CLICK
+    setOpen(false); // close sidebar after click
   };
 
   return (
@@ -25,7 +25,10 @@ export default function Nav() {
         </button>
 
         <div className="brand">
-          <img src={`${process.env.PUBLIC_URL}/images/MainLogo.PNG`} alt="logo" />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/MainLogo.PNG`}
+            alt="logo"
+          />
           <h3>HBadger</h3>
         </div>
 

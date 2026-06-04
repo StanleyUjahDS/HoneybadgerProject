@@ -21,9 +21,7 @@ function PieSlice({ startAngle, endAngle, color }) {
 
   useFrame(() => {
     if (meshRef.current) {
-      meshRef.current.position.z += (
-        (hovered ? 0.15 : 0) - meshRef.current.position.z
-      ) * 0.15;
+      meshRef.current.position.z += ((hovered ? 0.15 : 0) - meshRef.current.position.z) * 0.15;
     }
   });
 
@@ -49,11 +47,7 @@ function PieSlice({ startAngle, endAngle, color }) {
           endAngle - startAngle,
         ]}
       />
-      <meshStandardMaterial
-        color={color}
-        roughness={0.35}
-        metalness={0.15}
-      />
+      <meshStandardMaterial color={color} roughness={0.35} metalness={0.15} />
     </mesh>
   );
 }
@@ -82,27 +76,13 @@ export default function Tokenomics3D() {
       >
         <ambientLight intensity={0.9} />
 
-        <directionalLight
-          position={[5, 5, 5]}
-          intensity={1.5}
-        />
+        <directionalLight position={[5, 5, 5]} intensity={1.5} />
+        <directionalLight position={[-5, 5, -5]} intensity={0.8} />
 
-        <directionalLight
-          position={[-5, 5, -5]}
-          intensity={0.8}
-        />
-
-        <group
-          rotation={[0.9, 0, 0]}
-          scale={[1.25, 1.25, 1.25]}
-        >
+        <group rotation={[0.9, 0, 0]} scale={[1.25, 1.25, 1.25]}>
           {slices.map((slice, i) => {
             const start = accumulatedAngle;
-
-            const end =
-              accumulatedAngle +
-              (slice.value / 100) * Math.PI * 2;
-
+            const end = accumulatedAngle + (slice.value / 100) * Math.PI * 2;
             accumulatedAngle = end;
 
             return (

@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./styles/cards.css";
 
 export default function CardOne({ link, title, text }) {
   return (

@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./styles/cards.css";
 
 export default function CardThree(props) {
   return (

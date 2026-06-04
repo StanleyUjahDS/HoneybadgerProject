@@ -1,7 +1,7 @@
-import "./styles.css";
+import "./styles/roadmap.css";
 import CardTwo from "./CardType2";
 
-export default function Hero() {
+export default function Roadmap() {
   return (
     <div className="InfoRoadMap" id="RoadmapSection">
       <h1>ROADMAP</h1>

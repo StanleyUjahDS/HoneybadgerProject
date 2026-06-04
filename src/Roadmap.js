@@ -1,126 +1,76 @@
 import "./styles/roadmap.css";
-import CardTwo from "./CardType2";
+
+const phases = [
+  {
+    tag: "Fearless",
+    title: "Claim Territory",
+    items: [
+      "HBAD token launch",
+      "Genesis NFT mint",
+      "Early holders onboarded",
+    ],
+  },
+  {
+    tag: "Relentless",
+    title: "Dig In",
+    items: [
+      "Staking system goes live",
+      "Lock rewards activated",
+      "Holder incentives begin",
+    ],
+  },
+  {
+    tag: "Strong",
+    title: "Take Control",
+    items: [
+      "Governance activated",
+      "Treasury formation",
+      "Community voting system",
+    ],
+  },
+  {
+    tag: "Bold",
+    title: "Expand the Den",
+    items: [
+      "NFT marketplace launch",
+      "Ecosystem expansion",
+      "Utility integrations",
+    ],
+  },
+  {
+    tag: "Untamed",
+    title: "Don’t Die",
+    items: [
+      "DAO control transition",
+      "Emissions reduction",
+      "Long-term survival mode",
+    ],
+  },
+];
 
 export default function Roadmap() {
   return (
-    <div className="InfoRoadMap" id="RoadmapSection">
-      <h1>ROADMAP</h1>
+    <section className="RoadmapSection" id="RoadmapSection">
+      <h1 className="RoadmapTitle">ROADMAP</h1>
 
-      <div className="Roadmap">
-        {/* Phase I */}
-        <CardTwo
-          SmallHeader="Fearless"
-          Bigheader="Claim Territory"
-          text={
-            <>
+      <div className="RoadmapTrack">
+        {phases.map((phase, i) => (
+          <div className="RoadmapStep" key={i}>
+            <div className="RoadmapDot" />
+
+            <div className="RoadmapCard">
+              <span className="RoadmapTag">{phase.tag}</span>
+              <h2>{phase.title}</h2>
+
               <ul>
-                <li>HBAD token launch</li>
-                <li>Genesis Utility NFT mint (limited supply)</li>
-                <li>Early holders set the core</li>
+                {phase.items.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
               </ul>
-              <p><em>STAKE YOUR GROUND</em></p>
-            </>
-          }
-        />
-
-        {/* Phase II */}
-        <CardTwo
-          SmallHeader="Relentless"
-          Bigheader="Dig In"
-          text={
-            <>
-              <ul>
-                <li>HBAD staking goes live</li>
-                <li>Lock up for power</li>
-                <li>Rewards for the relentless</li>
-              </ul>
-              <p><em>STRONG HANDS ONLY</em></p>
-            </>
-          }
-        />
-
-        {/* Phase III */}
-        <CardTwo
-          SmallHeader="Strong"
-          Bigheader="Take Control"
-          text={
-            <>
-              <ul>
-                <li>Governance system activates</li>
-                <li>Treasury formation</li>
-                <li>Holders call the shots</li>
-              </ul>
-              <p><em>THOSE WHO COMMIT DECIDE</em></p>
-            </>
-          }
-        />
-
-        {/* Phase IV */}
-        <CardTwo
-          SmallHeader="Bold"
-          Bigheader="Expand the Den"
-          text={
-            <>
-              <ul>
-                <li>Native Hbadger NFT marketplace launch</li>
-                <li>HBAD-only economy</li>
-                <li>New utility NFT drops</li>
-              </ul>
-              <p><em>BUILD THE ECOSYSTEM</em></p>
-            </>
-          }
-        />
-
-        {/* Phase V */}
-        <CardTwo
-          SmallHeader="Untamed"
-          Bigheader="Don't Die"
-          text={
-            <>
-              <ul>
-                <li>DAO takes control</li>
-                <li>Emissions tighten</li>
-                <li>Adapt and survive</li>
-              </ul>
-              <p><em>SURVIVAL IS THE STRATEGY</em></p>
-            </>
-          }
-        />
-
-        {/* Milestone Images */}
-        <div className="Milestone-Container">
-          <img
-            src={`${process.env.PUBLIC_URL}/images/BEgining.png`}
-            alt="Phase I milestone"
-            className="Milestone-marker"
-            style={{ top: "5%" }}
-          />
-          <img
-            src={`${process.env.PUBLIC_URL}/images/Digging.png`}
-            alt="Phase II milestone"
-            className="Milestone-marker"
-            style={{ top: "25%" }}
-          />
-          <img
-            src={`${process.env.PUBLIC_URL}/images/Trap.png`}
-            alt="Phase III milestone"
-            className="Milestone-marker"
-            style={{ top: "45%" }}
-          />
-          <img
-            src={`${process.env.PUBLIC_URL}/images/HoneyBadgerBag.png`}
-            alt="Phase IV milestone"
-            className="Milestone-marker"
-            style={{ top: "65%" }}
-          />
-          <img
-            src={`${process.env.PUBLIC_URL}/images/logoHoneyBadger.png`}
-            alt="Phase V milestone"
-            className="Milestone-marker"
-            style={{ top: "85%" }}
-          />
-        </div>
+            </div>
+          </div>
+        ))}
       </div>
-    </div>
+    </section>
   );
 }

@@ -1,26 +1,213 @@
+/* =========================
+   TOKENOMICS SECTION
+========================= */
+
 .Tokenomics {
-  padding: 5rem clamp(2rem,8vw,10rem);
-  background: radial-gradient(circle at center top,rgba(240,185,11,.05),transparent 40%),#0b0e11;
+  padding: 6rem clamp(1.5rem, 8vw, 10rem);
+
+  background:
+    radial-gradient(
+      circle at top center,
+      rgba(240,185,11,.06),
+      transparent 40%
+    ),
+    #0b0e11;
+
+  color: #eaecef;
+  overflow: hidden;
 }
+
+/* =========================
+   SECTION HEADERS
+========================= */
+
+.Tokenomics-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  margin: 4rem 0 2rem;
+}
+
+.Tokenomics-header h1 {
+  margin: 0;
+
+  color: #f0b90b;
+
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+
+  letter-spacing: 2px;
+
+  text-shadow:
+    0 0 15px rgba(240,185,11,.15);
+}
+
+.Tokenomics-header hr {
+  flex: 1;
+
+  border: none;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(240,185,11,.3),
+      transparent
+    );
+}
+
+/* =========================
+   OVERVIEW CARDS
+========================= */
 
 .Tokenomics-content {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 2rem;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 1.5rem;
+}
+
+/* =========================
+   DISTRIBUTION WRAPPER
+========================= */
+
+.Distribution-content {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+}
+
+.Distribution-content .TokenAllocation {
+  width: 100%;
+  max-width: 900px;
+}
+
+/* =========================
+   UTILITY CARDS
+========================= */
+
+.Utility-content {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 1.5rem;
+}
+
+/* =========================
+   TAX SECTION
+========================= */
+
+.Transaction-tax {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 2rem 0;
 }
 
 .tax-info {
-  width: 400px;
-  padding: 12px 20px;
-  text-align: center;
-  background: #f0b90b;
+  background:
+    linear-gradient(
+      135deg,
+      #f0b90b,
+      #fcd535
+    );
+
   color: #0b0e11;
-}
-.tax-info h3 {
-  font-size: 1.25rem;
+
   font-weight: 700;
+  font-size: 1.1rem;
+
+  padding: 1rem 2rem;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 0 25px rgba(240,185,11,.2);
 }
-.tax-info p {
-  margin-top: .5rem;
+
+/* =========================
+   TAX BREAKDOWN
+========================= */
+
+.Tax-distribution {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 1.5rem;
+
+  margin-top: 2rem;
+}
+
+.Tax-distribution h2 {
+  margin: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(240,185,11,.05),
+      #181a20
+    );
+
+  border: 1px solid rgba(240,185,11,.15);
+
+  border-radius: 16px;
+
+  padding: 1.25rem;
+
   font-size: 1rem;
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+
+  transition: .3s ease;
+}
+
+.Tax-distribution h2:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(240,185,11,.45);
+
+  box-shadow:
+    0 0 20px rgba(240,185,11,.08),
+    0 15px 30px rgba(0,0,0,.5);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .Tokenomics {
+    padding: 4rem 1.25rem;
+  }
+
+  .Tokenomics-header {
+    flex-direction: column;
+  }
+
+  .Tokenomics-header hr {
+    width: 100%;
+  }
+
+  .Tokenomics-header h1 {
+    text-align: center;
+  }
+
+  .tax-info {
+    width: 100%;
+    text-align: center;
+  }
 }

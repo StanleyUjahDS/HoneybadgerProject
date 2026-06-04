@@ -1,0 +1,123 @@
+/* =========================
+   SECTION
+========================= */
+
+.PartnersSection {
+  padding: 5rem clamp(1.5rem, 8vw, 10rem);
+  background:
+    radial-gradient(circle at top, rgba(240,185,11,0.05), transparent 45%),
+    #0b0e11;
+
+  text-align: center;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.PartnersTitle {
+  color: #f0b90b;
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 3rem;
+
+  text-shadow: 0 0 15px rgba(240,185,11,0.2);
+}
+
+/* =========================
+   GRID
+========================= */
+
+.PartnersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+
+  max-width: 1000px;
+  margin: 0 auto;
+
+  justify-items: center;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.PartnerCard {
+  width: 100%;
+  max-width: 200px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1.5rem;
+
+  border-radius: 18px;
+
+  cursor: pointer;
+
+  background: linear-gradient(180deg, rgba(240,185,11,0.06), #181a20);
+
+  border: 1px solid rgba(240,185,11,0.2);
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.45);
+
+  transition: all 0.3s ease;
+
+  color: #eaecef;
+}
+
+.PartnerCard:hover {
+  transform: translateY(-6px) scale(1.03);
+  border-color: #f0b90b;
+  box-shadow: 0 0 25px rgba(240,185,11,0.15), 0 15px 35px rgba(0,0,0,0.55);
+}
+
+/* =========================
+   ICON
+========================= */
+
+.PartnerIcon {
+  font-size: 2.2rem;
+  color: #f0b90b;
+  margin-bottom: 0.8rem;
+
+  filter: drop-shadow(0 0 10px rgba(240,185,11,0.25));
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.PartnerName {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #b7bdc6;
+  text-align: center;
+}
+
+/* =========================
+   MOBILE (2 COLUMNS FIX)
+========================= */
+
+@media (max-width: 600px) {
+  .PartnersGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .PartnerCard {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .PartnerIcon {
+    font-size: 1.8rem;
+  }
+
+  .PartnerName {
+    font-size: 0.85rem;
+  }
+}

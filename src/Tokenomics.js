@@ -1,7 +1,6 @@
 import "./styles/tokenomics.css";
 import CardThree from "./CardType3";
 import TokenAllocation from "./Distribution";
-import Tokenomics3D from "./TokenomicsChart";
 
 import {
   FaFire,
@@ -45,9 +44,8 @@ export default function Tokenomic() {
       </div>
 
       <div className="Distribution-content">
-        <Tokenomics3D />
-        <TokenAllocation />
-      </div>
+  <TokenAllocation />
+</div>
 
       {/* TOKEN FEATURES */}
 

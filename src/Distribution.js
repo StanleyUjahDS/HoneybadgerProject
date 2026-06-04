@@ -1,41 +1,84 @@
-import "./styles/tokenomics.css";
-import { FaCheck } from "react-icons/fa";
+import "./styles/distribution.css";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
-// Matching colors from the 3D tokenomics chart
 const allocations = [
-  { label: "Burn (Initial)", percent: "10%", tokens: "1.0B", color: "#e53935" },
-  { label: "Presale", percent: "25%", tokens: "2.5B", color: "#b28e23" },
-  { label: "Liquidity", percent: "20%", tokens: "2.0B", color: "#0056b3" },
-  { label: "Development", percent: "15%", tokens: "1.5B", color: "#7b1fa2" },
-  { label: "Team (Locked)", percent: "5%", tokens: "500M", color: "#c55b00" },
-  { label: "Listings", percent: "5%", tokens: "500M", color: "#00838f" },
-  { label: "Marketing", percent: "5%", tokens: "500M", color: "#43a047" },
-  { label: "Ecosystem / Rewards", percent: "5%", tokens: "500M", color: "#6d4c41" },
-  { label: "Treasury", percent: "10%", tokens: "1.0B", color: "#37474f" },
+  { label: "Presale", percent: 25 },
+  { label: "Liquidity", percent: 20 },
+  { label: "Development", percent: 15 },
+  { label: "Burn (Initial)", percent: 10 },
+  { label: "Treasury", percent: 10 },
+  { label: "Team (Locked)", percent: 5 },
+  { label: "Listings", percent: 5 },
+  { label: "Marketing", percent: 5 },
+  { label: "Ecosystem / Rewards", percent: 5 },
 ];
 
-// Dynamic icon style
-const iconBg = (color) => ({
-  backgroundColor: color,
-  borderRadius: "50%",
-  padding: "4px",
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  marginRight: "8px",
-});
-
 export default function TokenAllocation() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    gsap.from(".allocation-row", {
+      opacity: 0,
+      y: 30,
+      stagger: 0.1,
+      duration: 0.8,
+      ease: "power3.out",
+    });
+
+    gsap.from(".allocation-fill", {
+      width: 0,
+      duration: 1.5,
+      stagger: 0.08,
+      ease: "power3.out",
+      delay: 0.3,
+    });
+  }, []);
+
   return (
-    <div className="TokenAllocation">
-      {allocations.map((item) => (
-        <h3 key={item.label}>
-          <span style={iconBg(item.color)}>
-            <FaCheck color="white" size={12} />
-          </span>
-          {item.percent} {item.label} ({item.tokens})
-        </h3>
-      ))}
+    <div className="TokenAllocation" ref={sectionRef}>
+      <div className="AllocationHeader">
+        <h2>Token Allocation</h2>
+
+        <p>
+          Fixed supply model built for sustainability and long-term growth.
+        </p>
+      </div>
+
+      <div className="AllocationBars">
+        {allocations.map((item) => (
+          <div className="allocation-row" key={item.label}>
+            <div className="allocation-top">
+              <span>{item.label}</span>
+              <span>{item.percent}%</span>
+            </div>
+
+            <div className="allocation-track">
+              <div
+                className="allocation-fill"
+                style={{ width: `${item.percent}%` }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="AllocationStats">
+        <div className="stat-card">
+          <h3>10B</h3>
+          <span>Total Supply</span>
+        </div>
+
+        <div className="stat-card">
+          <h3>Fixed</h3>
+          <span>Supply Model</span>
+        </div>
+
+        <div className="stat-card">
+          <h3>0%</h3>
+          <span>Mint Function</span>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,154 @@
+/* =========================
+   TOKEN ALLOCATION
+========================= */
+
+.TokenAllocation {
+  background: #181a20;
+
+  border: 1px solid rgba(240,185,11,.15);
+  border-radius: 24px;
+
+  padding: 2.5rem;
+
+  box-shadow:
+    0 0 35px rgba(240,185,11,.05),
+    0 20px 40px rgba(0,0,0,.45);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.AllocationHeader {
+  margin-bottom: 2rem;
+}
+
+.AllocationHeader h2 {
+  margin: 0;
+
+  color: #f0b90b;
+
+  font-family: "Orbitron", sans-serif;
+  font-size: 2rem;
+}
+
+.AllocationHeader p {
+  color: #b7bdc6;
+  margin-top: 0.75rem;
+}
+
+/* =========================
+   BARS
+========================= */
+
+.AllocationBars {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.allocation-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.allocation-top {
+  display: flex;
+  justify-content: space-between;
+
+  color: #eaecef;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.allocation-track {
+  height: 12px;
+
+  background: rgba(255,255,255,.05);
+
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.allocation-fill {
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    #f0b90b,
+    #fcd535
+  );
+
+  border-radius: 999px;
+
+  box-shadow:
+    0 0 15px rgba(240,185,11,.35);
+}
+
+/* =========================
+   STATS
+========================= */
+
+.AllocationStats {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 1rem;
+
+  margin-top: 3rem;
+}
+
+.stat-card {
+  background: rgba(255,255,255,.02);
+
+  border: 1px solid rgba(240,185,11,.1);
+  border-radius: 16px;
+
+  padding: 1.5rem;
+
+  text-align: center;
+
+  transition: all .3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(240,185,11,.4);
+
+  box-shadow:
+    0 0 25px rgba(240,185,11,.1);
+}
+
+.stat-card h3 {
+  margin: 0;
+
+  color: #f0b90b;
+
+  font-size: 2rem;
+  font-family: "Orbitron", sans-serif;
+}
+
+.stat-card span {
+  color: #b7bdc6;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .TokenAllocation {
+    padding: 1.5rem;
+  }
+
+  .AllocationStats {
+    grid-template-columns: 1fr;
+  }
+
+  .AllocationHeader h2 {
+    font-size: 1.5rem;
+  }
+}

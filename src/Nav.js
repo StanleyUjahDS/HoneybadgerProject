@@ -40,7 +40,7 @@ export default function Nav() {
 
         <div className="brand">
           <img
-            src={`${process.env.PUBLIC_URL}/images/MainLogo.PNG`}
+            src={`${process.env.PUBLIC_URL}/images/hbadgerLogo.png`}
             alt="logo"
           />
           <h3>Hbadger</h3>

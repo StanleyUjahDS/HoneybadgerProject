@@ -1,0 +1,26 @@
+.Tokenomics {
+  padding: 5rem clamp(2rem,8vw,10rem);
+  background: radial-gradient(circle at center top,rgba(240,185,11,.05),transparent 40%),#0b0e11;
+}
+
+.Tokenomics-content {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 2rem;
+}
+
+.tax-info {
+  width: 400px;
+  padding: 12px 20px;
+  text-align: center;
+  background: #f0b90b;
+  color: #0b0e11;
+}
+.tax-info h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.tax-info p {
+  margin-top: .5rem;
+  font-size: 1rem;
+}

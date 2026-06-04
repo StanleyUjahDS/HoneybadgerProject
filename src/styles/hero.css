@@ -1,0 +1,33 @@
+.hero {
+  height: 100vh;
+  padding: 0 clamp(2rem,8vw,10rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+  background: radial-gradient(circle at top center,rgba(240,185,11,.08),transparent 45%),#0b0e11;
+}
+
+.hero-text h1 {
+  font-size: 5rem;
+  color: #fff;
+  font-family: "Orbitron", sans-serif;
+  text-shadow: 0 0 25px rgba(240,185,11,.15);
+}
+
+.hero-text h3 {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  color: #f0b90b;
+}
+
+.hero-image img {
+  max-width: 600px;
+  filter: drop-shadow(0 0 20px rgba(240,185,11,.25));
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%,100% { filter: drop-shadow(0 0 20px rgba(240,185,11,.25)); }
+  50% { filter: drop-shadow(0 0 50px rgba(240,185,11,.6)); }
+}

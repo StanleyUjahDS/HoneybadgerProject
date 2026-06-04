@@ -1,71 +1,34 @@
 import "./styles.css";
 import { FaCheck } from "react-icons/fa";
 
-// Corresponding colors to the 3D pie chart slices
-const sliceColors = [
-  "#b28e23", // 30% Community & Ecosystem
-  "#0056b3", // 30% Liquidity & Staking
-  "#1f6e3a", // 15% Development
-  "#4b2e7c", // 10% Team (Vested)
-  "#c55b00", // 10% Treasury & DAO
-  "#a71d2a", // 5% Marketing
+// Matching colors from the 3D tokenomics chart
+const allocations = [
+{ label: "Burn (Initial)", percent: "10%", tokens: "1.0B", color: "#e53935" },
+{ label: "Presale", percent: "25%", tokens: "2.5B", color: "#b28e23" },
+{ label: "Liquidity", percent: "20%", tokens: "2.0B", color: "#0056b3" },
+{ label: "Development", percent: "15%", tokens: "1.5B", color: "#7b1fa2" },
+{ label: "Team (Locked)", percent: "5%", tokens: "500M", color: "#c55b00" },
+{ label: "Listings", percent: "5%", tokens: "500M", color: "#00838f" },
+{ label: "Marketing", percent: "5%", tokens: "500M", color: "#43a047" },
+{ label: "Ecosystem / Rewards", percent: "5%", tokens: "500M", color: "#6d4c41" },
+{ label: "Treasury", percent: "10%", tokens: "1.0B", color: "#37474f" },
 ];
 
 // Dynamic icon style
 const iconBg = (color) => ({
-  backgroundColor: color,
-  borderRadius: "50%",
-  padding: "4px",
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  marginRight: "8px",
+backgroundColor: color,
+borderRadius: "50%",
+padding: "4px",
+display: "inline-flex",
+alignItems: "center",
+justifyContent: "center",
+marginRight: "8px",
 });
 
 export default function TokenAllocation() {
-  return (
-    <div className="TokenAllocation">
-      <h3>
-        <span style={iconBg(sliceColors[0])}>
-          <FaCheck color="white" size={12} />
-        </span>
-        30% Community & Ecosystem
-      </h3>
-
-      <h3>
-        <span style={iconBg(sliceColors[1])}>
-          <FaCheck color="white" size={12} />
-        </span>
-        30% Liquidity & Staking
-      </h3>
-
-      <h3>
-        <span style={iconBg(sliceColors[2])}>
-          <FaCheck color="white" size={12} />
-        </span>
-        15% Development
-      </h3>
-
-      <h3>
-        <span style={iconBg(sliceColors[3])}>
-          <FaCheck color="white" size={12} />
-        </span>
-        10% Team (Vested)
-      </h3>
-
-      <h3>
-        <span style={iconBg(sliceColors[4])}>
-          <FaCheck color="white" size={12} />
-        </span>
-        10% Treasury & DAO
-      </h3>
-
-      <h3>
-        <span style={iconBg(sliceColors[5])}>
-          <FaCheck color="white" size={12} />
-        </span>
-        5% Marketing
-      </h3>
-    </div>
-  );
+return ( <div className="TokenAllocation">
+{allocations.map((item) => ( <h3 key={item.label}> <span style={iconBg(item.color)}> <FaCheck color="white" size={12} /> </span>
+{item.percent} {item.label} ({item.tokens}) </h3>
+))} </div>
+);
 }

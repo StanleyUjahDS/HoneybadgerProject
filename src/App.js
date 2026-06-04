@@ -1,10 +1,22 @@
-import "./styles.css";
+import "./styles/base.css";
+import "./styles/navbar.css";
+import "./styles/hero.css";
+import "./styles/cards.css";
+import "./styles/info.css";
+import "./styles/roadmap.css";
+import "./styles/tokenomics.css";
+import "./styles/responsive.css";
 
-export default function App() {
+function App() {
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
+    <>
+      <Navbar />
+      <Hero />
+      <Info />
+      <Roadmap />
+      <Tokenomics />
+    </>
   );
 }
+
+export default App;

@@ -1,9 +1,14 @@
 import "./styles.css";
 import CardThree from "./CardType3";
-import CardFour from "./CardType4";
-import TokenAllocation from "./Distribution"; 
+import TokenAllocation from "./Distribution";
 import Tokenomics3D from "./TokenomicsChart";
-import { FaTools, FaWater, FaBullhorn, FaWallet } from "react-icons/fa";
+
+import {
+  FaFire,
+  FaWater,
+  FaBullhorn,
+  FaLock
+} from "react-icons/fa";
 
 const iconStyle = {
   display: "inline-flex",
@@ -14,81 +19,116 @@ const iconStyle = {
 
 export default function Tokenomic() {
   return (
-    <div className="Tokenomics " id="TokenomicsSection">
-      <div className="Tokenomics-header">
-        <hr/>
-        <h1>TOKEN OVERVIEW</h1>
-        <hr/>
-      </div>
-      <div className="Tokenomics-content">
-        <CardThree text="Token Name" title="Hbadger (H 4 Honey)" />
-        <CardThree text="Ticker" title="HBADG (Badge)" />
-        <CardThree text="Total Supply" title="$1,000,000,000" />
-        <CardThree text="Supply Type" title="Fixed Supply-No Minting" />
-      </div>
+    <div className="Tokenomics" id="TokenomicsSection">
+
+      {/* TOKEN OVERVIEW */}
 
       <div className="Tokenomics-header">
-        <hr/>
-        <h1>TOKEN DISTRIBUTION</h1>
-        <hr/>
+        <hr />
+        <h1>TOKEN OVERVIEW</h1>
+        <hr />
       </div>
+
+      <div className="Tokenomics-content">
+        <CardThree text="Token Name" title="Hbadger" />
+        <CardThree text="Ticker" title="HBADG" />
+        <CardThree text="Total Supply" title="10,000,000,000" />
+        <CardThree text="Supply Type" title="Fixed Supply • No Minting" />
+      </div>
+
+      {/* DISTRIBUTION */}
+
+      <div className="Tokenomics-header">
+        <hr />
+        <h1>TOKEN DISTRIBUTION</h1>
+        <hr />
+      </div>
+
       <div className="Distribution-content">
         <Tokenomics3D />
         <TokenAllocation />
-      </div>  
+      </div>
+
+      {/* TOKEN FEATURES */}
 
       <div className="Tokenomics-header">
-        <hr/>
-        <h1>TOKEN UTILITIES</h1>
-        <hr/>
+        <hr />
+        <h1>TOKEN FEATURES</h1>
+        <hr />
       </div>
+
       <div className="Utility-content">
-        <CardFour link={`${process.env.PUBLIC_URL}/images/Reward.png`} title="Staking Rewards" text="Boost, Earn, Dominate" />
-        <CardFour link={`${process.env.PUBLIC_URL}/images/Governace.png`} title="Governance Voting" text="Decisions by the committed" />
-        <CardFour link={`${process.env.PUBLIC_URL}/images/Nft.png`} title="NFT Utility" text="Mint & power up NFTs" />
-        <CardFour link={`${process.env.PUBLIC_URL}/images/Marketplace.png`} title="Marketplace Currency" text="Fuel the ecosystem" />
+
+        <CardThree
+          text="Liquidity"
+          title="20% Initial Liquidity"
+        />
+
+        <CardThree
+          text="LP Status"
+          title="Liquidity Burned"
+        />
+
+        <CardThree
+          text="Burn Model"
+          title="True Supply Reduction"
+        />
+
+        <CardThree
+          text="Ownership"
+          title="Renounce Planned"
+        />
+
       </div>
 
+      {/* TAX */}
+
       <div className="Tokenomics-header">
-        <hr/>
-        <h1>Transaction Tax</h1>
-        <hr/>
+        <hr />
+        <h1>TRANSACTION TAX</h1>
+        <hr />
       </div>
+
       <div className="Transaction-tax Tokenomics-header">
-        <hr/>
-        <div className="tax-info">2% BUY / 2% SELL</div>
-        <hr/>
+        <hr />
+        <div className="tax-info">
+          1.8% BUY / 1.8% SELL
+        </div>
+        <hr />
       </div>
 
       <div className="Tax-distribution">
+
         <h2>
           <span style={iconStyle}>
-            <FaTools color="#b28e23" size={20} />
+            <FaBullhorn color="#b28e23" size={20} />
           </span>
-          1% Development
+          1.0% Marketing
         </h2>
 
         <h2>
           <span style={iconStyle}>
             <FaWater color="#0056b3" size={20} />
           </span>
-          0.5% Liquidity
+          0.5% Auto Liquidity
         </h2>
 
         <h2>
           <span style={iconStyle}>
-            <FaBullhorn color="#a71d2a" size={20} />
+            <FaFire color="#a71d2a" size={20} />
           </span>
-          0.3% Marketing
+          0.3% True Burn
         </h2>
 
         <h2>
           <span style={iconStyle}>
-            <FaWallet color="#4b2e7c" size={20} />
+            <FaLock color="#4b2e7c" size={20} />
           </span>
-          0.2% Treasury
+          LP Tokens Burned
         </h2>
+
       </div>
+
     </div>
   );
 }

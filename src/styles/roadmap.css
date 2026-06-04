@@ -1,0 +1,26 @@
+.InfoRoadMap {
+  padding: 5rem clamp(2rem,8vw,10rem);
+  background: radial-gradient(circle at center top,rgba(240,185,11,.05),transparent 45%),#0b0e11;
+}
+
+.Roadmap {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: relative;
+}
+
+.Roadmap::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  background: linear-gradient(to bottom,transparent,#f0b90b 10%,#f0b90b 90%,transparent);
+}
+
+.Milestone-marker {
+  width: 90px;
+  height: 90px;
+  background: #f0b90b;
+  border-radius: 50%;
+}

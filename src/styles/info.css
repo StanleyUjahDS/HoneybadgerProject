@@ -1,0 +1,14 @@
+.Info {
+  background: radial-gradient(circle at center top,rgba(240,185,11,.04),transparent 40%),#0b0e11;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 5rem clamp(2rem,8vw,10rem);
+}
+
+.InfoText {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  padding: 2rem;
+  border-radius: 16px;
+  background: linear-gradient(180deg,#181a20 0%,#181a20 70%,rgba(240,185,11,.08));
+}

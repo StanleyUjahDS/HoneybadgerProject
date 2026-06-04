@@ -1,0 +1,27 @@
+/* GOOGLE FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&family=Orbitron:wght@700&family=Roboto+Mono:wght@400;500&display=swap");
+
+/* RESET */
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  background: #0b0e11;
+  color: #eaecef;
+  font-family: "Roboto Mono", monospace;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+html, body {
+  overflow-x: hidden;
+}

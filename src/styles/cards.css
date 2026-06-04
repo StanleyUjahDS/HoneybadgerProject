@@ -1,0 +1,25 @@
+.CardOne {
+  max-width: 220px;
+  padding: 16px;
+  text-align: center;
+  border-radius: 14px;
+  border: 1px solid rgba(240,185,11,.25);
+  background: linear-gradient(180deg,rgba(240,185,11,.12),#181a20 20%);
+  transition: .3s;
+}
+
+.CardTwo {
+  width: 42%;
+  padding: 1.75rem;
+  border-radius: 18px;
+  background: linear-gradient(180deg,rgba(240,185,11,.05),#181a20);
+  border: 1px solid rgba(240,185,11,.25);
+}
+
+.CardThree {
+  background: linear-gradient(180deg,rgba(240,185,11,.06),#181a20);
+  border: 1px solid rgba(240,185,11,.25);
+  border-radius: 16px;
+  padding: 1.25rem;
+  position: relative;
+}

@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./styles/info.css";
 import CardOne from "./CardType1";
 
 export default function Info() {

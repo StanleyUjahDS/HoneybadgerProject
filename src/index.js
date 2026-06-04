@@ -18,7 +18,7 @@ import "./styles/cards.css";
 import "./styles/info.css";
 import "./styles/roadmap.css";
 import "./styles/tokenomics.css";
-import "./styles/responsive.css";
+//import "./styles/responsive.css";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);

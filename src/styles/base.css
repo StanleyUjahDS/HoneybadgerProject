@@ -1,27 +1,72 @@
 /* GOOGLE FONTS */
 @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&family=Orbitron:wght@700&family=Roboto+Mono:wght@400;500&display=swap");
 
-/* RESET */
-* { box-sizing: border-box; }
+/* =========================
+   RESET
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
-html, body {
+body {
   margin: 0;
   padding: 0;
-  max-width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+
   background: #0b0e11;
   color: #eaecef;
+
   font-family: "Roboto Mono", monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-img {
+/* =========================
+   MEDIA SAFETY
+========================= */
+img,
+video,
+canvas,
+svg {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
+/* Prevent layout bleed (important for GSAP + flex/grid) */
+section,
+div {
+  min-width: 0;
+}
+
+/* =========================
+   TYPOGRAPHY DEFAULTS
+========================= */
+h1, h2, h3, h4, h5 {
+  font-family: "Exo 2", sans-serif;
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* =========================
+   SCROLL SAFETY (GSAP FRIENDLY)
+========================= */
 html, body {
-  overflow-x: hidden;
+  overscroll-behavior: none;
+}
+
+/* Optional but helpful for animations */
+.gsap-smooth {
+  will-change: transform, opacity;
 }

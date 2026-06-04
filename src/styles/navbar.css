@@ -1,17 +1,31 @@
+/* =========================
+   NAVBAR BASE
+========================= */
+
 .Nav {
   position: sticky;
   top: 0;
   z-index: 100;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   padding: 0 2rem;
+
   background: rgba(11, 14, 17, 0.96);
   backdrop-filter: blur(12px);
+
   border-bottom: 1px solid rgba(240, 185, 11, 0.18);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+
   font-family: "Exo 2", sans-serif;
 }
+
+/* =========================
+   BRAND
+========================= */
 
 .brand {
   display: flex;
@@ -21,70 +35,181 @@
 }
 
 .brand img {
-  width: 48px;
-  margin-right: .5rem;
+  width: 44px;
+  margin-right: 0.5rem;
 }
+
+/* =========================
+   DESKTOP LINKS
+========================= */
 
 .nav-links {
   list-style: none;
   display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
   color: #eaecef;
-  padding: 14px 16px;
+  padding: 12px 14px;
   text-decoration: none;
-  transition: .25s;
+
+  border-radius: 6px;
+
+  transition: all 0.25s ease;
 }
 
 .nav-links a:hover {
   color: #fcd535;
+  background: rgba(240, 185, 11, 0.06);
 }
 
+/* CTA */
 .nav-links .cta {
-  background: linear-gradient(135deg,#f0b90b,#fcd535);
+  background: linear-gradient(135deg, #f0b90b, #fcd535);
   color: #0b0e11;
-  border-radius: 8px;
-  margin-left: 1rem;
+
   font-weight: 700;
-  box-shadow: 0 0 20px rgba(240,185,11,.25);
+
+  border-radius: 8px;
+
+  box-shadow: 0 0 20px rgba(240, 185, 11, 0.25);
 }
+
+.nav-links .cta:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================
+   HAMBURGER
+========================= */
 
 .openbtn {
   display: none;
-  font-size: 24px;
+  font-size: 28px;
+
   background: none;
   border: none;
+
   color: #eaecef;
+
+  cursor: pointer;
 }
+
+/* =========================
+   OVERLAY
+========================= */
+
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: 0.3s ease;
+
+  z-index: 199;
+}
+
+.sidebar-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
 
 .sidebar {
-  height: 100%;
-  width: 0;
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
+
+  width: 260px;
+  height: 100%;
+
   background: #181a20;
-  overflow-x: hidden;
-  transition: .4s;
-  padding-top: 60px;
-  border-right: 1px solid rgba(240,185,11,.2);
+
+  transform: translateX(-100%);
+  transition: 0.35s ease;
+
+  padding-top: 70px;
+
+  border-right: 1px solid rgba(240, 185, 11, 0.2);
+
+  box-shadow: 8px 0 30px rgba(0, 0, 0, 0.6);
+
+  z-index: 200;
 }
 
-.sidebar.open { width: 260px; }
+.sidebar.open {
+  transform: translateX(0);
+}
 
+/* SIDEBAR LINKS */
 .sidebar a {
-  padding: 12px 32px;
-  font-size: 20px;
-  color: #f0b90b;
   display: block;
+
+  padding: 14px 28px;
+
+  font-size: 18px;
+
+  color: #f0b90b;
+
+  text-decoration: none;
+
+  transition: 0.2s ease;
+  border-radius: 6px;
 }
 
+.sidebar a:hover {
+  color: #ffffff;
+  background: rgba(240, 185, 11, 0.08);
+}
+
+/* CLOSE BUTTON */
 .closebtn {
   position: absolute;
   top: 10px;
   right: 20px;
-  font-size: 36px;
+
+  font-size: 34px;
+
   background: none;
   border: none;
-  color: white;
+
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .openbtn {
+    display: block;
+  }
+}
+
+/* =========================
+   UX LOCK (use with JS class)
+========================= */
+
+body.nav-open {
+  overflow: hidden;
 }

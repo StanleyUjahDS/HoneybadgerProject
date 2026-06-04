@@ -7,7 +7,7 @@ export default function TokenPlatforms() {
   {
     name: "PancakeSwap",
     url: "#",
-    image: `${process.env.PUBLIC_URL}/images/platforms/pancakeswap.png`,
+    image: `${process.env.PUBLIC_URL}/images/pancakeswap-cake-logo.png`,
   },
   {
     name: "CoinGecko",
@@ -17,7 +17,7 @@ export default function TokenPlatforms() {
   {
     name: "CoinMarketCap",
     url: "#",
-    image: `${process.env.PUBLIC_URL}/images/platforms/coinmarketcap.png`,
+    image: `${process.env.PUBLIC_URL}/images/coinmarketcap.png`,
   },
   {
     name: "DEXTools",

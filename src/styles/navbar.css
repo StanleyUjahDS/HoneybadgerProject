@@ -5,7 +5,7 @@
 .Nav {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
 
   display: flex;
   align-items: center;
@@ -13,12 +13,12 @@
 
   padding: 0 2rem;
 
-  background: rgba(11, 14, 17, 0.96);
-  backdrop-filter: blur(12px);
+  background: rgba(11, 14, 17, 0.98);
+  backdrop-filter: blur(14px);
 
   border-bottom: 1px solid rgba(240, 185, 11, 0.18);
 
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
 
   font-family: "Exo 2", sans-serif;
 }
@@ -101,22 +101,22 @@
 }
 
 /* =========================
-   OVERLAY
+   OVERLAY (FIXED LAYERING)
 ========================= */
 
 .sidebar-overlay {
   position: fixed;
   inset: 0;
 
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
 
   opacity: 0;
   pointer-events: none;
 
   transition: 0.3s ease;
 
-  z-index: 199;
+  z-index: 1500;
 }
 
 .sidebar-overlay.active {
@@ -125,7 +125,7 @@
 }
 
 /* =========================
-   SIDEBAR
+   SIDEBAR (FIXED BUG HERE)
 ========================= */
 
 .sidebar {
@@ -134,9 +134,9 @@
   left: 0;
 
   width: 260px;
-  height: 100%;
+  height: 100vh;
 
-  background: #181a20;
+  background: #181a20; /* solid — removes transparency issue */
 
   transform: translateX(-100%);
   transition: 0.35s ease;
@@ -147,14 +147,17 @@
 
   box-shadow: 8px 0 30px rgba(0, 0, 0, 0.6);
 
-  z-index: 200;
+  z-index: 1600; /* ABOVE overlay */
 }
 
 .sidebar.open {
   transform: translateX(0);
 }
 
-/* SIDEBAR LINKS */
+/* =========================
+   SIDEBAR LINKS
+========================= */
+
 .sidebar a {
   display: block;
 
@@ -196,7 +199,6 @@
 ========================= */
 
 @media (max-width: 768px) {
-
   .nav-links {
     display: none;
   }
@@ -207,7 +209,7 @@
 }
 
 /* =========================
-   UX LOCK (use with JS class)
+   UX LOCK
 ========================= */
 
 body.nav-open {

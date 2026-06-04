@@ -4,7 +4,6 @@ import "./styles/navbar.css";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
-
   const navRef = useRef(null);
 
   const scrollToSection = (id) => {
@@ -15,36 +14,70 @@ export default function Nav() {
     setOpen(false);
   };
 
-  // optional GSAP entrance animation
+  // GSAP entrance animation
   useEffect(() => {
-    gsap.from(navRef.current, {
-      y: -30,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-    });
+    if (!navRef.current) return;
+
+    gsap.fromTo(
+      navRef.current,
+      { y: -40, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
+    );
   }, []);
+
+  // LOCK BODY SCROLL WHEN MENU OPEN
+  useEffect(() => {
+    document.body.classList.toggle("nav-open", open);
+  }, [open]);
 
   return (
     <>
+      {/* NAVBAR */}
       <div className="Nav" id="NavSection" ref={navRef}>
         <button className="openbtn" onClick={() => setOpen(true)}>
           ☰
         </button>
 
         <div className="brand">
-          <img src={`${process.env.PUBLIC_URL}/images/MainLogo.PNG`} alt="logo" />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/MainLogo.PNG`}
+            alt="logo"
+          />
           <h3>Hbadger</h3>
         </div>
 
         <ul className="nav-links">
-          <li><a href="#InfoSections">About</a></li>
-          <li><a href="#TokenomicsSection">Tokenomics</a></li>
-          <li><a href="#RoadmapSection">Roadmap</a></li>
-          <li><a href="#CommunitySection">Community</a></li>
-          <li><a href="#" className="cta">Buy</a></li>
+          <li onClick={() => scrollToSection("InfoSections")}>
+            <a>About</a>
+          </li>
+          <li onClick={() => scrollToSection("TokenomicsSection")}>
+            <a>Tokenomics</a>
+          </li>
+          <li onClick={() => scrollToSection("RoadmapSection")}>
+            <a>Roadmap</a>
+          </li>
+          <li onClick={() => scrollToSection("CommunitySection")}>
+            <a>Community</a>
+          </li>
+
+          <li>
+            <a
+              className="cta"
+              href="https://pancakeswap.finance/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Buy
+            </a>
+          </li>
         </ul>
       </div>
+
+      {/* OVERLAY (IMPORTANT FIX) */}
+      <div
+        className={`sidebar-overlay ${open ? "active" : ""}`}
+        onClick={() => setOpen(false)}
+      />
 
       {/* SIDEBAR */}
       <div className={`sidebar ${open ? "open" : ""}`}>
@@ -52,11 +85,19 @@ export default function Nav() {
           ×
         </button>
 
-        <a href="#InfoSections" onClick={() => setOpen(false)}>About</a>
-        <a href="#TokenomicsSection" onClick={() => setOpen(false)}>Tokenomics</a>
-        <a href="#RoadmapSection" onClick={() => setOpen(false)}>Roadmap</a>
-        <a href="#CommunitySection" onClick={() => setOpen(false)}>Community</a>
-        <a href="#" onClick={() => setOpen(false)}>Buy</a>
+        <a onClick={() => scrollToSection("InfoSections")}>About</a>
+        <a onClick={() => scrollToSection("TokenomicsSection")}>Tokenomics</a>
+        <a onClick={() => scrollToSection("RoadmapSection")}>Roadmap</a>
+        <a onClick={() => scrollToSection("CommunitySection")}>Community</a>
+
+        <a
+          href="https://pancakeswap.finance/"
+          target="_blank"
+          rel="noreferrer"
+          onClick={() => setOpen(false)}
+        >
+          Buy
+        </a>
       </div>
     </>
   );

@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/HoneybadgerProject/static/css/main.d67613b5.css",
-    "main.js": "/HoneybadgerProject/static/js/main.3210d232.js",
+    "main.css": "/HoneybadgerProject/static/css/main.c542fe96.css",
+    "main.js": "/HoneybadgerProject/static/js/main.c3f60399.js",
     "index.html": "/HoneybadgerProject/index.html",
-    "main.d67613b5.css.map": "/HoneybadgerProject/static/css/main.d67613b5.css.map",
-    "main.3210d232.js.map": "/HoneybadgerProject/static/js/main.3210d232.js.map"
+    "main.c542fe96.css.map": "/HoneybadgerProject/static/css/main.c542fe96.css.map",
+    "main.c3f60399.js.map": "/HoneybadgerProject/static/js/main.c3f60399.js.map"
   },
   "entrypoints": [
-    "static/css/main.d67613b5.css",
-    "static/js/main.3210d232.js"
+    "static/css/main.c542fe96.css",
+    "static/js/main.c3f60399.js"
   ]
 }

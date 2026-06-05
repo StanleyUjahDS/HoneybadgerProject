@@ -148,19 +148,11 @@
   margin-top: 2rem;
 
 }
-
 .Tax-distribution h2 {
   margin: 0;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(240,185,11,.05),
-      #181a20
-    );
-
+  background: linear-gradient(180deg, rgba(240,185,11,.05), #181a20);
   border: 1px solid rgba(240,185,11,.15);
-
   border-radius: 16px;
 
   padding: 1.25rem;
@@ -170,11 +162,14 @@
 
   display: flex;
   align-items: center;
+  justify-content: center;   
 
-  transition: .3s ease;
+  gap: 0.6rem;              
+
   text-align: center;
-}
 
+  transition: 0.3s ease;
+}
 .Tax-distribution h2:hover {
   transform: translateY(-5px);
 

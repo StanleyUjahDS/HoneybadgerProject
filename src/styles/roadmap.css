@@ -1,66 +1,82 @@
+/* =========================
+   ROADMAP SECTION
+========================= */
+
 .RoadmapSection {
-  padding: 5rem clamp(1.5rem, 8vw, 10rem);
-  background: radial-gradient(circle at top, rgba(240,185,11,0.05), transparent 45%), #0b0e11;
+  padding: 5rem clamp(1.5rem, 6vw, 6rem);
+  background: #0b0e11;
   color: #eaecef;
 }
 
+/* =========================
+   TITLE
+========================= */
+
 .RoadmapTitle {
   text-align: center;
+  font-size: clamp(2rem, 4vw, 3rem);
   font-family: "Orbitron", sans-serif;
   color: #f0b90b;
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 4rem;
+
+  margin-bottom: 3.5rem;
+  letter-spacing: 2px;
+
+  text-shadow: 0 0 15px rgba(240,185,11,0.2);
 }
 
 /* =========================
-   TRACK LINE
+   TRACK (TIMELINE)
 ========================= */
 
 .RoadmapTrack {
   position: relative;
-  max-width: 900px;
+  max-width: 980px;
   margin: 0 auto;
-  padding-left: 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
 
+/* vertical line */
 .RoadmapTrack::before {
   content: "";
   position: absolute;
-  left: 18px;
+  left: 16px;
   top: 0;
   bottom: 0;
 
   width: 2px;
+
   background: linear-gradient(
     to bottom,
     transparent,
-    rgba(240,185,11,0.8),
+    rgba(240,185,11,0.4),
     transparent
   );
 }
 
 /* =========================
-   STEP
+   STEP WRAPPER
 ========================= */
 
 .RoadmapStep {
+  display: flex;
+  gap: 1.2rem;
   position: relative;
-  margin-bottom: 2.5rem;
 }
 
-/* DOT */
+/* node */
 .RoadmapDot {
-  position: absolute;
-  left: -4px;
-  top: 6px;
-
   width: 14px;
   height: 14px;
-
-  background: #f0b90b;
   border-radius: 50%;
 
-  box-shadow: 0 0 15px rgba(240,185,11,0.5);
+  margin-top: 14px;
+
+  background: #f0b90b;
+  box-shadow: 0 0 12px rgba(240,185,11,0.4);
+  flex-shrink: 0;
 }
 
 /* =========================
@@ -68,42 +84,94 @@
 ========================= */
 
 .RoadmapCard {
-  background: linear-gradient(180deg, rgba(240,185,11,0.06), #181a20);
-  border: 1px solid rgba(240,185,11,0.2);
+  flex: 1;
 
-  padding: 1.5rem 2rem;
+  background: linear-gradient(
+    180deg,
+    rgba(240,185,11,0.05),
+    #181a20
+  );
+
+  border: 1px solid rgba(240,185,11,0.15);
   border-radius: 16px;
 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  padding: 1.5rem;
 
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(240,185,11,0.05),
+    0 10px 25px rgba(0,0,0,0.4);
 }
 
 .RoadmapCard:hover {
-  transform: translateY(-4px);
-  border-color: rgba(240,185,11,0.5);
-  box-shadow: 0 0 25px rgba(240,185,11,0.15);
+  transform: translateY(-6px);
+  border-color: rgba(240,185,11,0.45);
+  box-shadow:
+    0 0 25px rgba(240,185,11,0.12),
+    0 15px 35px rgba(0,0,0,0.55);
 }
 
-.RoadmapCard h2 {
+/* =========================
+   TAG
+========================= */
+
+.RoadmapTag {
+  display: inline-block;
+
+  font-size: 0.75rem;
+  font-weight: 600;
+
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+
   color: #f0b90b;
-  margin: 0.5rem 0 1rem;
+  background: rgba(240,185,11,0.12);
+
+  margin-bottom: 0.6rem;
 }
+
+/* =========================
+   TITLE INSIDE CARD
+========================= */
+
+.RoadmapCard h2 {
+  font-size: 1.2rem;
+  color: #f0b90b;
+
+  margin-bottom: 1rem;
+}
+
+/* =========================
+   LIST STYLE
+========================= */
 
 .RoadmapCard ul {
   margin: 0;
   padding-left: 1.2rem;
-  color: #b7bdc6;
 }
 
-/* TAG */
-.RoadmapTag {
-  display: inline-block;
-  font-size: 0.75rem;
-  padding: 4px 10px;
-  border-radius: 6px;
-  background: rgba(240,185,11,0.1);
-  color: #f0b90b;
+.RoadmapCard li {
+  color: #b7bdc6;
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+}
+
+/* =========================
+   RWA EMPHASIS (PHASE 6 ONLY)
+========================= */
+
+.RoadmapStep:last-child .RoadmapCard {
+  border-color: rgba(240,185,11,0.35);
+  box-shadow:
+    0 0 30px rgba(240,185,11,0.08),
+    0 15px 40px rgba(0,0,0,0.6);
+}
+
+/* subtle glow tag for RWA */
+.RoadmapStep:last-child .RoadmapTag {
+  background: rgba(240,185,11,0.18);
+  box-shadow: 0 0 10px rgba(240,185,11,0.2);
 }
 
 /* =========================
@@ -111,15 +179,15 @@
 ========================= */
 
 @media (max-width: 768px) {
-  .RoadmapTrack {
-    padding-left: 30px;
-  }
-
   .RoadmapTrack::before {
-    left: 12px;
+    left: 10px;
   }
 
-  .RoadmapDot {
-    left: -2px;
+  .RoadmapStep {
+    gap: 1rem;
+  }
+
+  .RoadmapCard {
+    padding: 1.2rem;
   }
 }

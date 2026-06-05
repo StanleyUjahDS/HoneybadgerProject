@@ -1,4 +1,4 @@
-import { FaX } from "react-icons/fa6";
+import { FaE, FaX } from "react-icons/fa6";
 import "./styles/footer.css";
 import { FaTwitter, FaDiscord, FaTelegram, FaCoins, FaWhatsapp } from "react-icons/fa";
 
@@ -7,7 +7,7 @@ export default function Footer() {
     { icon: FaX, url: "https://x.com/hbadger_token" },
     { icon: FaWhatsapp, url: "https://chat.whatsapp.com/HFYyl8sEvLi2hhM1RlMxu2" },
     { icon: FaTelegram, url: "https://t.me/hbadger_cryptocurrency_channel" },
-    { icon: FaCoins, url: "https://www.cowrieprotocol.com" },
+    { icon: FaE, url: "mailto:team@hbadgertoken.com" },
   ];
 
   return (

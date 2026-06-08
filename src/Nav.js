@@ -63,7 +63,7 @@ export default function Nav() {
           <li>
             <a
               className="cta"
-              href="https://pancakeswap.finance/"
+              href="https://pancakeswap.finance/swap?chain=bsc&chainOut=bsc&inputCurrency=BNB&outputCurrency=0x5d72717Ab33F38504935960A1D8603276a76511c&exactAmount=&exactField=INPUT"
               target="_blank"
               rel="noreferrer"
             >
@@ -91,7 +91,7 @@ export default function Nav() {
         <a onClick={() => scrollToSection("CommunitySection")}>Community</a>
 
         <a
-          href="https://pancakeswap.finance/"
+          href="https://pancakeswap.finance/swap?chain=bsc&chainOut=bsc&inputCurrency=BNB&outputCurrency=0x5d72717Ab33F38504935960A1D8603276a76511c&exactAmount=&exactField=INPUT"
           target="_blank"
           rel="noreferrer"
           onClick={() => setOpen(false)}

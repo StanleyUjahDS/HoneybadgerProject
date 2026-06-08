@@ -5,7 +5,7 @@ export default function TokenPlatforms() {
   const platforms = [
     {
       name: "PancakeSwap",
-      url: "#",
+      url: "https://pancakeswap.finance/swap?chain=bsc&chainOut=bsc&inputCurrency=BNB&outputCurrency=0x5d72717Ab33F38504935960A1D8603276a76511c&exactAmount=&exactField=INPUT",
       image: `${process.env.PUBLIC_URL}/images/pancakeswap-cake-logo.png`,
     },
     {
@@ -15,17 +15,17 @@ export default function TokenPlatforms() {
     },
     {
       name: "CoinMarketCap",
-      url: "#",
+      url: "https://coinmarketcap.com/currencies/hbadger/",
       image: `${process.env.PUBLIC_URL}/images/coinmarketcap.png`,
     },
     {
       name: "DEXTools",
-      url: "#",
+      url: "https://www.dextools.io/app/token/hbadger",
       image: `${process.env.PUBLIC_URL}/images/dextools-seeklogo.png`,
     },
     {
       name: "DexScreener",
-      url: "#",
+      url: "https://dexscreener.com/bsc/0xc43748bc1985bc5cef0aa1e3107b684b547a554e",
       image: `${process.env.PUBLIC_URL}/images/dex-screener-seeklogo.png`,
     },
   ];
